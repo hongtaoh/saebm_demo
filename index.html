@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="SA-EBM">
+  <meta name="keywords" content="saebm">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stage-Aware Event-Based Modeling (SA-EBM) for Disease Progression</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Stage-Aware Event-Based Modeling (SA-EBM) for Disease
+            Progression</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://hongtaoh.com">Hongtao Hao</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://radiology.wisc.edu/profile/vivek-prabhakaran-486/">Vivek Prabhakaran</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://radiology.wisc.edu/profile/veena-nair-548/">Veena A Nair</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=IuXLooMAAAAJ&hl=en">Nagesh Adluru</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://alab.psych.wisc.edu/people/">Joseph L. Austerweil</a><sup>2,1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">for the Alzheimer’s Disease Neuroimaging Initiative
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Wisconsin-Madison </span>
+            <span class="author-block"><sup>2</sup>Chiba Institute of Technology </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Package Link. -->
+              <span class="link-block">
+                <a href="https://pypi.org/project/pysaebm/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-python"></i>
+                  </span>
+                  <span>Package</span>
+                </a>
+              </span>
+              <!-- Package Code. -->
+              <span class="link-block">
+                <a href="https://github.com/hongtaoh/pysaebm"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Package Code</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/hongtaoh/saebm"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Reproducible Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            As diseases progress, they increasingly impact more cognitive and biological factors. 
+            By formulating probabilistic models with this basic assumption, Event-Based Models (EBMs) enable researchers 
+            to discover the progression of a disease that makes earlier diagnosis and effective clinical interventions possible. 
+            We build on prior EBMs with two major improvements: (1) dynamic estimation of healthy and pathological biomarker distributions, 
+            and (2) explicit modeling of disease stage distribution. We tested existing approaches and our novel approach on 9,000 synthetic datasets and also the real-world ADNI data. 
+            We found that our stage-aware EBM (SA-EBM) significantly outperforms prior methods, 
+            such as Gaussian Mixture Model (GMM) EBM, Kernel Density Estimation EBM and Discriminative EBM, 
+            in accurately recovering the order of disease events and assigning individual disease stages. 
+            Our Python package can be installed by <code>pip install pysaebm</code>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Problem Statement</h2>
+
+        <table>
+          <caption>Participant biomarker measurements</caption>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Impacted</th>
+              <th>FUS-FCI</th>
+              <th>P-Tau</th>
+              <th>MMSE</th>
+              <th>AB</th>
+              <th>HIP-FCI</th>
+              <th>PCC-FCI</th>
+              <th>&hellip;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Yes</td><td>27.16</td><td>-6.14</td><td>24.49</td><td>147.99</td><td>1.59</td><td>2.80</td><td>&hellip;</td></tr>
+            <tr><td>2</td><td>Yes</td><td>17.20</td><td>57.89</td><td>24.43</td><td>157.13</td><td>-4.06</td><td>8.84</td><td>&hellip;</td></tr>
+            <tr><td>3</td><td>Yes</td><td>13.99</td><td>62.51</td><td>20.87</td><td>158.12</td><td>6.48</td><td>4.42</td><td>&hellip;</td></tr>
+            <tr><td>4</td><td>No</td><td>3.38</td><td>26.23</td><td>27.05</td><td>275.64</td><td>-2.94</td><td>10.68</td><td>&hellip;</td></tr>
+            <tr><td>5</td><td>No</td><td>9.90</td><td>20.60</td><td>28.97</td><td>242.11</td><td>-2.81</td><td>5.69</td><td>&hellip;</td></tr>
+            <tr><td>6</td><td>No</td><td>9.29</td><td>40.00</td><td>26.53</td><td>343.85</td><td>-3.56</td><td>7.31</td><td>&hellip;</td></tr>
+            <tr><td>&vellip;</td><td>&vellip;</td><td>&vellip;</td><td>&vellip;</td><td>&vellip;</td><td>&vellip;</td><td>&vellip;</td><td>&vellip;</td><td>&dtdot;</td></tr>
+          </tbody>
+        </table>
+
+        <p>This table represents a typical cross-sectional dataset containing biomarker measurements 
+          from both healthy and progressing participants. The challenge is to infer the temporal sequence 
+          in which biomarkers become pathological as the disease develops. 
+          This table clearly illustrates that the task is daunting without the support of 
+          advanced statistical models.</p>
+      </div>
+      </div>
+      </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Methods</h2>
+        <h3 class="title is-4">SA-EBM Algorithm</h3>
+        <img src="./static/images/algo.png" alt="The algorithm of SAEBM">
+        <h3 class="title is-4">Graphic Model</h3>
+        <img src="./static/images/graphmod3.svg" alt="The graphic model of SA-EBM" width="500" height="300">
+      </div>
+      </div>
+      </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+        <h3 class="title is-4">Kendall's Tau for ordering results</h3>
+        <img src="./static/images/tau.svg" alt="Kendall's Tau for ordering results">
+        <p>
+          <strong>Average normalized Kendall's Tau distance values (± 95% CI).</strong>
+          Each panel represents a different experimental configuration with varying data generation models,
+          stage distributions, and biomarker distributions.
+        </p>
+
+        </br>
+        
+        <p>
+          The X-axis within each panel shows different participant sizes 
+          (<span style="white-space: nowrap;">J = 50, 200, 500, 1000</span>). 
+          Within each participant size are different healthy ratios (<i>r</i>), 
+          i.e., the percentage of healthy participants among all subjects. 
+          From left to right are 
+          <span style="white-space: nowrap;">r = 0.1, 0.25, 0.5, 0.75, 0.9</span>.
+        </p>
+
+        </br>
+        
+        <p>
+          The Y-axis shows the normalized Kendall's Tau distance (lower is better). 
+          Data points represent mean performance across 50 variants of the same experimental configuration, 
+          sample size, and healthy ratio. 
+          SA-EBM (Conjugate Priors) consistently outperform static and baseline methods.
+          Performance generally improves with increasing sample size, 
+          while fixed-parameter methods degrade under high healthy ratios and non-Gaussian data.
+        </p>
+
+      </br>
+
+        <h3 class="title is-4">Mean average errors for staging results</h3>
+        <img src="./static/images/mae.svg" alt="Mean average errors for staging results">
+        <p>
+          <strong>Mean average errors (± 95% CI)</strong> for staging accuracy across nine synthetic
+          experiments. Results are organized in the same way as in the above figure. SA-EBM outperforms
+          static methods in staging accuracy.
+        </p>
+        
+      </div>
+      </div>
+      </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{hao2025saebm,
+      author    = {Hao, Hongtao and Prabhakaran, Vivek and Nair, Veena A and Adluru, Nagesh and Austerweil, Joseph L. and for the Alzheimer’s Disease Neuroimaging Initiative},
+      title     = {Stage-Aware Event-Based Modeling (SA-EBM) for Disease Progression},
+      journal   = {Machine Learning for Healthcare},
+      year      = {2025},
+    }
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is adapated from <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -255,7 +255,7 @@
       <div class="column is-full-width">
         <h2 class="title is-3 correction-title">Correction for Experiment 9</h2>
         <p>
-          In the implementation of Experiment 9, the noise standard deviation was set to the square root of <i>N</i> * 0.05 instead of <i>N</i> * 0.05. This error increased the noise standard deviation from 0.50 to 0.71, resulting in larger noise. However, this does not impact the experiment's outcome. In fact, the increased noise likely enhances the performance of SA-EBM. Given the current performance of benchmark algorithms in Experiment 9, it is unlikely that their performance would change significantly if the experiment were redone with the corrected implementation.
+          In the implementation of Experiment 9, the noise standard deviation was set to the square root of <i>N</i> * 0.05 instead of <i>N</i> * 0.05. This error increased the noise standard deviation from 0.50 to 0.71, resulting in larger noise. However, this does not impact the experiment's outcome. In fact, the increased noise likely undermines the performance of SA-EBM. That is to say, the performance of SA-EBM is expected to be better if using the correct implementation. This increased noises may benefit DEBM and DEBM GMM. However, given the current performance of benchmark algorithms in Experiment 9, it is unlikely that their performance would change significantly if the experiment were redone with the corrected implementation.
         </p>
         <p>
           Due to this implementation error, the statement on page 9 of the paper, "<i>N = 10 in our experiments ensured 95% of the noise fell within [−1, +1]</i>," should be revised to: "<i>N = 10 in our experiments ensured 95.5% of the noise fell within [−1.4, +1.4]</i>."

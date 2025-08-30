@@ -1,4 +1,4 @@
-# SAEBM
+# SA-EBM
 
 This is the repository that contains source code for the [SAEBM](https://).
 

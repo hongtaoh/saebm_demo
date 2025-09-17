@@ -14,6 +14,17 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
@@ -124,9 +135,18 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <div class="notification is-warning">
+        <!-- <div class="notification is-warning">
           <p><strong>Important Notice:</strong> Corrections have been made to <a href="#correction-exp9" class="button is-small is-link">Experiment 9</a> regarding noise standard deviation and to <a href="#correction-adni" class="button is-small is-link">ADNI Results</a> regarding ICV normalization. Please review the updated sections for details.</p>
+        </div> -->
+        <div class="notification is-warning">
+          <p><strong>Important Notice:</strong> Corrections have been made to 
+            <a href="#correction-conjugate-priors" class="button is-small is-link">Conjugate Priors</a>,
+            <a href="#correction-exp9" class="button is-small is-link">Experiment 9</a>, and 
+            <a href="#correction-adni" class="button is-small is-link">ADNI Results</a>.
+            Please review the updated sections for details.
+          </p>
         </div>
+        
       </div>
     </div>
   </div>
@@ -208,6 +228,42 @@
     </div>
   </div>
 </section>
+
+<section class="section" id="correction-conjugate-priors">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 correction-title">Clarification for Conjugate Priors</h2>
+        <p>
+          In Appendix B.2 of the paper, we originally wrote that 
+          <i>“$m_n$ and $s_n^2$ are the resulting posterior estimates.”</i> 
+          To clarify: $m_n, n_n, v_n, s_n^2$ are the updated hyperparameters 
+          of the Normal–Inverse–Gamma posterior. 
+        </p>
+        <p>
+          In our implementation, we use the posterior mean of $\mu$, which equals $m_n$, 
+          and the posterior mean of $\sigma^2$ under the corresponding Inverse–Gamma distribution, 
+          computed as
+        </p>
+        <p style="text-align: center;">
+          \[
+          \hat{\sigma}^2 = \frac{\beta_n}{\alpha_n - 1}, 
+          \quad \alpha_n = \tfrac{v_n}{2}, \;\; \beta_n = \tfrac{v_n s_n^2}{2}.
+          \]
+        </p>
+        <p>
+          We then report $\hat{\sigma} = \sqrt{\hat{\sigma}^2}$ as the posterior standard deviation.
+        </p>
+        <p>
+          This clarification does not affect any reported results, 
+          but ensures consistency between the mathematical description and the implementation.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <section class="section">
   <div class="container is-max-desktop">

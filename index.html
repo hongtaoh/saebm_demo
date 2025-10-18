@@ -258,12 +258,23 @@
           This clarification does not affect any reported results, 
           but ensures consistency between the mathematical description and the implementation.
         </p>
+
+        <h2 class="title is-3 correction-title">Further Clarifications for Conjugate Priors</h2>
+        <ol>
+          <li>
+            Previously, we used hard assignment as in MLE, i.e., each biomarker measurement belongs 
+            to either the pre- or post-event state. Now, we are using soft assignment: 
+            each biomarker value belongs to both states probabilistically.
+          </li>
+          <li>
+            We use $\hat{\alpha}^2 = \frac{\beta_n}{\alpha_n}$ as we found this leads to empirical gains in performance.
+          </li>
+        </ol>
+        
       </div>
     </div>
   </div>
 </section>
-
-
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -329,6 +340,11 @@
         <p>
           Intracranial volume (ICV) normalization was not applied to brain volumes in the ADNI dataset, as it is standard practice due to natural variations in brain size. However, applying normalization altered the ADNI results, leading to new interpretations.
         </p>
+      </br>
+        <p>
+          We tried ten random seeds for Conjugate Priors and UCL GMM to maximize the data log likelihood. For details, refer to https://github.com/hongtaoh/saebm?tab=readme-ov-file#adni.
+        </p>
+        </br>
         <h3 class="title is-4">Ordering Results</h3>
         <p>
           The DEBM model does not exhibit strong clustering, as similar biomarkers do not become pathological at similar times. DEBM GMM clustering performs better, but MRI brain volumes are scattered across the entire range. In contrast, UCL GMM, MLE, and Conjugate Priors demonstrate robust clustering. These models indicate that amyloid-beta (Aβ) and tau/p-tau become pathological before cognitive decline, followed by brain atrophy.
@@ -347,6 +363,7 @@
         </p>
         <div style="text-align: center;">
           <img src="./static/images/adni_staging_conjugate_priors.svg" alt="Conjugate Priors ADNI staging result">
+          <img src="./static/images/adni_staging_mle.svg" alt="MLE ADNI staging result">
           <img src="./static/images/adni_staging_ucl_gmm.svg" alt="UCL GMM ADNI staging result">
           <img src="./static/images/adni_staging_debm.svg" alt="DEBM ADNI staging result">
           <img src="./static/images/adni_staging_debm_gmm.svg" alt="DEBM GMM ADNI staging result">

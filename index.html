@@ -288,6 +288,7 @@
           Each panel represents a different experimental configuration with varying data generation models,
           stage distributions, and biomarker distributions.
         </p>
+        </br>
         <p>
           The X-axis within each panel shows different participant sizes 
           (<span style="white-space: nowrap;">J = 50, 200, 500, 1000</span>). 
@@ -304,12 +305,29 @@
           Performance generally improves with increasing sample size, 
           while fixed-parameter methods degrade under high healthy ratios and non-Gaussian data.
         </p>
+        </br>
         <h3 class="title is-4">Mean average errors for staging results</h3>
         <img src="./static/images/mae.svg" alt="Mean average errors for staging results">
         <p>
           <strong>Mean average errors (± 95% CI)</strong> for staging accuracy across nine synthetic
           experiments. Results are organized in the same way as in the above figure. SA-EBM outperforms
           static methods in staging accuracy.
+        </p>
+        </br>
+        <p>
+          Note that for the staging task, we only used the $\theta$ and $\phi$ parameters obtained from the inference stage and we do not assume knowledge of the diagnosis label (AD or CN). We did not use any prior or posteriors of stage stages obtained from the inference stage. 
+        </p>
+        </br>
+        <h3 class="title is-4">Kendall's Tau for ordering results including all SA-EBM variants</h3>
+        <img src="./static/images/tau_all.svg" alt="Kendall's Tau for ordering results, including all SA-EBM variants">
+        <p>
+          These Kendall's tau results include those of all SA-EBM variants. 
+        </p>
+      </br>
+        <h3 class="title is-4">Mean average errors for staging results including all SA-EBM variants</h3>
+        <img src="./static/images/mae_all.svg" alt="Mean average errors for staging results, including all SA-EBM variants">
+        <p>
+          These MAE results include those of all SA-EBM variants. 
         </p>
       </div>
     </div>
